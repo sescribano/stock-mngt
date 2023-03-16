@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="stock.css" />
+<style>
+body {
+  background-color: white;
+}
+h1 {
+  color: #9a7611;
+}
+p {
+  font-weight: bold;
+}
+
+button {
+  font-weight: bold;
+  background-color: #9a7611;
+  border: none;
+  color: white;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  border-radius: 12px;
+}
+</style>
+
+</head>
+<body>
+
+<h1>Aplicación de Gestión de Stock</h1>
+
+<p>Mostrar Productos</p>
+<form method="GET" action="/stocks">
+  <button type="submit" name="VerStock">Ver Productos</button>
+</form>
+
+
+<p>Crear nuevo Producto</p>
+<form action="/stocks" method="POST">
+  <input type="text" placeholder="Producto" name="product">
+  <!--<input type="number" placeholder="Unidades" name="units">-->
+  <button type="submit">Añadir</button>
+</form>
+
+
+<p>Modificar Producto</p>
+<form action="/stocks_mod" method="POST">
+  <input type="text" placeholder="Producto" name="product">
+  <input type="number" placeholder="Unidades" name="units">
+  <button type="submit">Modificar</button>
+</form>
+
