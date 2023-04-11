@@ -13,7 +13,8 @@ app.use(cors())
 app.use(express.static(__dirname + '/public'));
 
 const getStock = (request, response) => {
-  pool.query('SELECT * FROM stock', (error, results) => {
+  //pool.query('SELECT * FROM stock', (error, results) => {
+  pool.query('SELECT name FROM salesforce.account', (error, results) => {
     if (error) {
       throw error
     }
@@ -23,7 +24,8 @@ const getStock = (request, response) => {
 var result = "Productos obtenidos: ";
 
     data.forEach(row => {
-       result = result + "<br/>" + (`Producto: ${row.product}, ${row.units} `);
+       //result = result + "<br/>" + (`Producto: ${row.product}, ${row.units} `);
+       result = result + "<br/>" + (`Producto: ${row.name} `);
     })
 
     response.status(200).send(result)
